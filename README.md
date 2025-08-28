@@ -1,7 +1,6 @@
-# js-api-automation-framework
+# JS API Automation Framework
 
-Overview
-
+## Overview
 This repository contains a JavaScript-based API/Backend automation framework designed for testing RESTful APIs. The framework supports CRUD operations (GET, POST, PUT, DELETE) and uses modern tools like Node.js, Node-Fetch, and Chai for assertions. Test results are generated in Mochawesome HTML reports for easy analysis.
 
 ## Features

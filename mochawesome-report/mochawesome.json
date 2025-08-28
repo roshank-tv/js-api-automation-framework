@@ -1,0 +1,217 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-28T11:15:11.631Z",
+    "end": "2025-08-28T11:15:13.426Z",
+    "duration": 1795,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3cb4b0ca-2b67-44c1-baec-24e19c7123c4",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "19486701-3047-476c-87cb-d24dfb198f97",
+          "title": "POST API Test",
+          "fullFile": "/Users/testvagrant/Documents/api-automation-framework/tests/createPost.test.js",
+          "file": "/tests/createPost.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a new post successfully",
+              "fullTitle": "POST API Test should create a new post successfully",
+              "timedOut": false,
+              "duration": 378,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const payload = {\n    title : \"Post API Test\",\n    body : \"First Post request.\",\n    id : 3\n};\nconst response = await postRequest(\"/posts\", payload);\nexpect(response.status).to.equal(201);\nconst data = await response.json();\nexpect(data).to.have.property(\"id\");\nexpect(data.id).to.be.a(\"number\");",
+              "err": {},
+              "uuid": "815546e5-2ee1-4a78-b0ad-5eb04effe65f",
+              "parentUUID": "19486701-3047-476c-87cb-d24dfb198f97",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "815546e5-2ee1-4a78-b0ad-5eb04effe65f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 378,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "3e0df58f-feb1-4010-a251-0cda5ad80d24",
+          "title": "DELETE Post API Test",
+          "fullFile": "/Users/testvagrant/Documents/api-automation-framework/tests/deletePost.test.js",
+          "file": "/tests/deletePost.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete a post successfully",
+              "fullTitle": "DELETE Post API Test should delete a post successfully",
+              "timedOut": false,
+              "duration": 702,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await deleteRequest(\"/posts/1\");\nexpect(response.status).to.be.equal(200);\nconst data = await response.text();\nexpect(data === \"\" || data === \"{}\").to.be.true;",
+              "err": {},
+              "uuid": "32289109-a5c7-4682-9dbf-6b37891cc351",
+              "parentUUID": "3e0df58f-feb1-4010-a251-0cda5ad80d24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "32289109-a5c7-4682-9dbf-6b37891cc351"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 702,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "b89e5a13-7edc-43f3-b27f-e5d252f5681d",
+          "title": "GET API Test",
+          "fullFile": "/Users/testvagrant/Documents/api-automation-framework/tests/getUser.test.js",
+          "file": "/tests/getUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should fetch user details successfully",
+              "fullTitle": "GET API Test should fetch user details successfully",
+              "timedOut": false,
+              "duration": 37,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await getRequest(\"/users/1\");\nexpect(response.status).to.be.equal(200);\nconst data = await response.json();\nexpect(data).to.have.property(\"id\");\nexpect(data.id).to.equal(1);\nexpect(data).to.have.property(\"name\");\nexpect(data.name).to.be.a(\"string\");",
+              "err": {},
+              "uuid": "b97613cd-40b1-4e25-a153-154b48d784c9",
+              "parentUUID": "b89e5a13-7edc-43f3-b27f-e5d252f5681d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b97613cd-40b1-4e25-a153-154b48d784c9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 37,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "c18ee068-0856-4cdd-bfc7-e93b902ad139",
+          "title": "UPDATE API Test",
+          "fullFile": "/Users/testvagrant/Documents/api-automation-framework/tests/updatePost.test.js",
+          "file": "/tests/updatePost.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update an existing post successfully",
+              "fullTitle": "UPDATE API Test should update an existing post successfully",
+              "timedOut": false,
+              "duration": 667,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const updatedPayload = {\n    id: 1,\n    title: \"Updated Post Title\",\n    body: \"This post has been updated\",\n    userId: 1\n};\nconst response = await putRequest(\"/posts/1\", updatedPayload);\nexpect(response.status).to.be.equal(200);",
+              "err": {},
+              "uuid": "ac9fc5ca-a218-4552-8681-848d9ca372fb",
+              "parentUUID": "c18ee068-0856-4cdd-bfc7-e93b902ad139",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac9fc5ca-a218-4552-8681-848d9ca372fb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 667,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
